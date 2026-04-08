@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Phapros CSIRT | Computer Security Incident Response Team</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;800;900&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-header {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary-fixed": "#00210a",
+                      "secondary-fixed-dim": "#58e07e",
+                      "on-tertiary-fixed": "#001c3b",
+                      "background": "#f8f9ff",
+                      "surface-container-high": "#dce9ff",
+                      "on-error": "#ffffff",
+                      "on-tertiary": "#ffffff",
+                      "surface-tint": "#0d5bbc",
+                      "on-primary": "#ffffff",
+                      "tertiary-fixed-dim": "#a7c8fe",
+                      "secondary": "#006d31",
+                      "on-secondary-fixed-variant": "#005323",
+                      "primary-fixed-dim": "#adc7ff",
+                      "on-surface": "#0d1c2e",
+                      "on-secondary": "#ffffff",
+                      "on-surface-variant": "#424752",
+                      "on-error-container": "#93000a",
+                      "tertiary-container": "#3a5b8a",
+                      "inverse-surface": "#233144",
+                      "tertiary": "#204371",
+                      "surface-variant": "#d5e3fc",
+                      "error": "#ba1a1a",
+                      "tertiary-fixed": "#d5e3ff",
+                      "inverse-primary": "#adc7ff",
+                      "on-background": "#0d1c2e",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container-low": "#eff4ff",
+                      "on-primary-fixed-variant": "#004493",
+                      "on-tertiary-fixed-variant": "#254776",
+                      "primary-container": "#0057b8",
+                      "on-primary-container": "#bfd2ff",
+                      "surface": "#f8f9ff",
+                      "on-primary-fixed": "#001a41",
+                      "surface-dim": "#ccdbf3",
+                      "secondary-fixed": "#76fd97",
+                      "surface-container": "#e6eeff",
+                      "on-tertiary-container": "#bad3ff",
+                      "outline-variant": "#c2c6d4",
+                      "primary-fixed": "#d8e2ff",
+                      "secondary-container": "#76fd97",
+                      "error-container": "#ffdad6",
+                      "surface-bright": "#f8f9ff",
+                      "on-secondary-container": "#007434",
+                      "primary": "#00408b",
+                      "outline": "#727784",
+                      "inverse-on-surface": "#eaf1ff",
+                      "surface-container-highest": "#d5e3fc"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "fontFamily": {
+                      "headline": ["Public Sans"],
+                      "body": ["Inter"],
+                      "label": ["Inter"]
+              }
+            },
+          }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-lg shadow-[0_12px_40px_rgba(13,28,46,0.06)]">
+<div class="flex justify-between items-center px-12 h-20 w-full max-w-7xl mx-auto">
+<div class="text-xl font-black text-blue-900 dark:text-blue-50 tracking-tighter font-headline">
+                Phapros CSIRT
+            </div>
+<div class="hidden md:flex items-center gap-8 font-headline font-semibold tracking-tight">
+<a class="text-blue-700 dark:text-blue-400 border-b-2 border-blue-700 dark:border-blue-400 pb-1 transition-all duration-300 ease-in-out hover:opacity-80 active:scale-95" href="#home">Home</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 transition-all duration-300 ease-in-out hover:opacity-80 active:scale-95" href="#about">About</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 transition-all duration-300 ease-in-out hover:opacity-80 active:scale-95" href="#rfc">RFC 2350</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 transition-all duration-300 ease-in-out hover:opacity-80 active:scale-95" href="#contact">Contact</a>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer" data-icon="security">security</span>
+<a class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-6 py-2.5 rounded-full font-headline font-bold text-sm transition-all hover:opacity-90 active:scale-95" href="#report">
+                    Report Incident
+                </a>
+</div>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative overflow-hidden min-h-[921px] flex items-center bg-surface-container-low" id="home">
+<div class="max-w-7xl mx-auto px-12 py-24 grid md:grid-cols-2 gap-16 items-center relative z-10">
+<div class="space-y-8">
+<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary-container text-on-secondary-container font-label text-xs font-bold uppercase tracking-widest">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+                        Digital Frontier Secured
+                    </div>
+<h1 class="font-headline font-black text-6xl lg:text-7xl text-primary leading-[1.05] tracking-tighter">
+                        PT Phapros CSIRT: <br/>
+<span class="text-on-surface">Securing Our Digital Frontier</span>
+</h1>
+<p class="text-on-surface-variant text-xl leading-relaxed max-w-xl font-body">
+                        Menjaga ketahanan digital dalam produksi obat berkualitas. We safeguard the pharmaceutical supply chain through proactive cybersecurity monitoring and rapid incident response.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-full font-headline font-bold text-lg hover:shadow-lg transition-all flex items-center gap-3 active:scale-95">
+                            Report Incident
+                            <span class="material-symbols-outlined" data-icon="shield_alert">shield</span>
+</button>
+<button class="bg-surface-container-highest text-primary px-8 py-4 rounded-full font-headline font-bold text-lg hover:bg-surface-container-high transition-all active:scale-95">
+                            Learn More
+                        </button>
+</div>
+</div>
+<div class="relative">
+<div class="absolute inset-0 bg-primary/5 rounded-[4rem] -rotate-6 transform scale-105"></div>
+<div class="relative rounded-[3rem] overflow-hidden shadow-2xl aspect-square">
+<img class="w-full h-full object-cover" data-alt="Modern high-tech cybersecurity data center room with glowing blue server racks and digital matrix overlays, clinical and professional atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcNHwDxqVJRjFFdkhxz4-a4VXHfN-CwUvWWw2IplBo2p8KF1YilD3Rw9sA2ta7sXZgiTIaoCS0zQeyTDrjrD5l9vq1QBAYNgvhgSPDu-TD3Nkiiv9HFMZ--4rqVc5XAOS-QOwo4jO-elhGW5hkayLF9CbGI0-3YGZQbEbCXGC_ppbkIiLhUJCal2G2tD8lwxoIU3XGKrqB10oBHdOQCQNui4QGgU0A8P0zpjaJtBndRJY37lIwSQKbCmbBPCfryurx9X3dl3Ubnic"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent"></div>
+</div>
+<!-- Floating Stat Card -->
+<div class="absolute -bottom-8 -left-8 bg-surface-container-lowest p-8 rounded-xl shadow-xl border-l-4 border-secondary max-w-[240px]">
+<div class="text-primary font-headline font-black text-4xl">24/7</div>
+<div class="text-on-surface-variant font-label text-xs font-bold mt-2">REAL-TIME MONITORING ACTIVATED</div>
+</div>
+</div>
+</div>
+<!-- Decorative Background Element -->
+<div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px]"></div>
+</section>
+<!-- About Us Section (Bento Style) -->
+<section class="py-32 px-12 max-w-7xl mx-auto" id="about">
+<div class="mb-20 space-y-4">
+<span class="font-label text-sm font-bold text-primary tracking-[0.2em] uppercase">The Clinical Guardian</span>
+<h2 class="font-headline font-black text-5xl text-on-surface tracking-tight">Our Strategic Mandate</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Large Feature -->
+<div class="md:col-span-8 bg-surface-container-lowest p-12 rounded-xl relative overflow-hidden flex flex-col justify-end min-h-[400px]">
+<div class="absolute top-0 left-0 w-1.5 h-full bg-secondary"></div>
+<div class="relative z-10 max-w-xl">
+<span class="material-symbols-outlined text-5xl text-primary mb-6" data-icon="medical_services">medical_services</span>
+<h3 class="font-headline font-bold text-3xl mb-4">Pharmaceutical Incident Response</h3>
+<p class="text-on-surface-variant text-lg leading-relaxed">
+                            PT Phapros CSIRT serves as the central node for detecting, analyzing, and mitigating cybersecurity threats. We ensure that the production of life-saving medicines remains uninterrupted by digital disruptions.
+                        </p>
+</div>
+</div>
+<!-- Small Feature 1 -->
+<div class="md:col-span-4 bg-surface-container-low p-8 rounded-xl border-l-4 border-primary flex flex-col gap-6">
+<span class="material-symbols-outlined text-4xl text-primary" data-icon="notification_important">notification_important</span>
+<div>
+<h4 class="font-headline font-bold text-xl mb-2">Early Warning</h4>
+<p class="text-on-surface-variant text-sm">Proactive threat hunting and vulnerability dissemination specifically tailored for pharmaceutical manufacturing environments.</p>
+</div>
+</div>
+<!-- Small Feature 2 -->
+<div class="md:col-span-4 bg-surface-container-high p-8 rounded-xl flex flex-col gap-6">
+<span class="material-symbols-outlined text-4xl text-primary" data-icon="school">school</span>
+<div>
+<h4 class="font-headline font-bold text-xl mb-2">Security Education</h4>
+<p class="text-on-surface-variant text-sm">Building a culture of cyber hygiene across all departments, from laboratory technicians to executive leadership.</p>
+</div>
+</div>
+<!-- Small Feature 3 -->
+<div class="md:col-span-8 bg-primary text-on-primary p-12 rounded-xl flex flex-col md:flex-row items-center gap-8">
+<div class="flex-1">
+<h4 class="font-headline font-bold text-3xl mb-4">Collaborative Resilience</h4>
+<p class="text-on-primary-container text-lg">In coordination with BSSN and industry stakeholders, we maintain a unified defense posture against global cyber threats.</p>
+</div>
+<div class="w-full md:w-1/3 aspect-video rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Abstract network of interconnected glowing nodes and lines on a dark blue pharmaceutical digital background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7k41m_D_o1GHuREwrVBY9iMViOpXPLpZuvLbheUQEWaYCGkJu_8fq51cPXrwVw0dE-wmCck5Kc33qGltCAjPyPI3b_rmYTH0gWY04NKVeFh3uRO3CYa9Jvnm7bvuuLBy59G-jNUMNPo20xpRLXqfSQsu7RzIEdbXlFNc3pcfhGswhFHrDSa6wKmVDzs9neje1hNNXosHH45g9VGtomAYjsobrBgJ6jSxvKVVkRBpHSS4SQhjSCAK8WvXK26tjIHCHpq00_4I_Jgg"/>
+</div>
+</div>
+</div>
+</section>
+<!-- RFC 2350 Section -->
+<section class="bg-surface-container-low py-32 px-12" id="rfc">
+<div class="max-w-7xl mx-auto">
+<div class="grid lg:grid-cols-2 gap-20 items-start">
+<div class="sticky top-32 space-y-10">
+<div>
+<span class="font-label text-sm font-bold text-primary tracking-[0.2em] uppercase">Documentation &amp; Compliance</span>
+<h2 class="font-headline font-black text-5xl text-on-surface tracking-tight mt-4">RFC 2350 Protocol</h2>
+<p class="text-on-surface-variant text-xl mt-6 leading-relaxed">
+                                Our operations adhere strictly to the RFC 2350 standard, providing complete transparency into our team's identity, responsibilities, and operational policies.
+                            </p>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl space-y-6">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="key">key</span>
+<div>
+<h5 class="font-headline font-bold text-lg">PGP Public Key</h5>
+<p class="text-on-surface-variant text-xs font-label">ID: 0xFD4E2A1B • Fingerprint available in PDF</p>
+</div>
+</div>
+<button class="w-full bg-primary-container text-on-primary-container py-4 rounded-full font-headline font-bold flex items-center justify-center gap-3 hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined" data-icon="download">download</span>
+                                Download Full RFC 2350 (PDF)
+                            </button>
+</div>
+</div>
+<div class="space-y-6">
+<!-- Technical Cards -->
+<div class="bg-surface-container-lowest rounded-xl p-0 overflow-hidden shadow-sm">
+<div class="flex">
+<div class="w-2 bg-secondary"></div>
+<div class="p-10 flex-1">
+<h4 class="font-headline font-bold text-2xl mb-4">1. Contact Information</h4>
+<div class="space-y-4 font-body text-on-surface-variant">
+<div class="flex justify-between border-b border-outline-variant/10 pb-2">
+<span class="font-label text-xs font-bold text-on-surface-variant uppercase">Full Name</span>
+<span>PT Phapros Tbk CSIRT</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/10 pb-2">
+<span class="font-label text-xs font-bold text-on-surface-variant uppercase">Timezone</span>
+<span>Western Indonesia (UTC+07)</span>
+</div>
+<div class="flex justify-between">
+<span class="font-label text-xs font-bold text-on-surface-variant uppercase">Language</span>
+<span>Bahasa Indonesia, English</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-0 overflow-hidden shadow-sm">
+<div class="flex">
+<div class="w-2 bg-primary"></div>
+<div class="p-10 flex-1">
+<h4 class="font-headline font-bold text-2xl mb-4">2. Responsibilities</h4>
+<p class="text-on-surface-variant mb-6 leading-relaxed">The team is responsible for managing security incidents across all Phapros digital infrastructure, including IT and OT (Operational Technology) networks within the manufacturing facility.</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-container-low px-4 py-1.5 rounded-full text-xs font-bold text-primary">Incident Handling</span>
+<span class="bg-surface-container-low px-4 py-1.5 rounded-full text-xs font-bold text-primary">Vulnerability Reporting</span>
+<span class="bg-surface-container-low px-4 py-1.5 rounded-full text-xs font-bold text-primary">Security Auditing</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-0 overflow-hidden shadow-sm">
+<div class="flex">
+<div class="w-2 bg-tertiary"></div>
+<div class="p-10 flex-1">
+<h4 class="font-headline font-bold text-2xl mb-4">3. Policies</h4>
+<p class="text-on-surface-variant mb-4">Information sharing is conducted strictly under the Traffic Light Protocol (TLP). Confidentiality and data integrity are paramount in all our communications.</p>
+<div class="grid grid-cols-2 gap-4 mt-6">
+<div class="p-4 rounded-lg bg-surface-container-low text-center">
+<div class="font-black text-xl text-primary">TLP:RED</div>
+<div class="text-[10px] font-bold text-on-surface-variant">Restricted to Team</div>
+</div>
+<div class="p-4 rounded-lg bg-surface-container-low text-center">
+<div class="font-black text-xl text-primary">TLP:AMBER</div>
+<div class="text-[10px] font-bold text-on-surface-variant">Restricted to Org</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact & Report Section -->
+<section class="py-32 px-12 relative overflow-hidden" id="contact">
+<div class="absolute inset-0 bg-surface-dim opacity-40"></div>
+<div class="max-w-7xl mx-auto relative z-10">
+<!-- Asymmetric Layout: Reporting Card Overlapping Section -->
+<div class="grid lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-5 space-y-8">
+<span class="font-label text-sm font-bold text-primary tracking-[0.2em] uppercase">Immediate Action</span>
+<h2 class="font-headline font-black text-5xl text-on-surface tracking-tight">Report an Incident</h2>
+<p class="text-on-surface-variant text-lg">If you have discovered a vulnerability or are experiencing an active security incident, please use the secure channels below to reach our response team immediately.</p>
+<div class="space-y-6 pt-4">
+<div class="flex items-start gap-6">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary" data-icon="call">call</span>
+</div>
+<div>
+<div class="font-headline font-bold">Emergency Hotline</div>
+<div class="text-primary font-black text-xl">(024) 760 3808</div>
+</div>
+</div>
+<div class="flex items-start gap-6">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary" data-icon="mail">mail</span>
+</div>
+<div>
+<div class="font-headline font-bold">Secure Email</div>
+<div class="text-on-surface-variant">csirt@phapros.co.id</div>
+</div>
+</div>
+<div class="flex items-start gap-6">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary" data-icon="location_on">location_on</span>
+</div>
+<div>
+<div class="font-headline font-bold">Headquarters</div>
+<div class="text-on-surface-variant">Jl. Simongan No.131, Semarang, Central Java</div>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-7" id="report">
+<div class="bg-surface-container-lowest p-12 rounded-[2rem] shadow-[0_32px_64px_-16px_rgba(13,28,46,0.12)]">
+<h3 class="font-headline font-bold text-2xl mb-8 flex items-center gap-3">
+<span class="w-8 h-8 rounded-full bg-error/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-error text-xl" data-icon="warning">warning</span>
+</span>
+                                Incident Intake Form
+                            </h3>
+<form class="space-y-6">
+<div class="grid md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label text-xs font-bold uppercase text-on-surface-variant">Reporter Name</label>
+<input class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary/20" placeholder="Your Full Name" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label text-xs font-bold uppercase text-on-surface-variant">Department/Org</label>
+<input class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary/20" placeholder="Organization" type="text"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label text-xs font-bold uppercase text-on-surface-variant">Type of Incident</label>
+<select class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary/20">
+<option>Select incident category</option>
+<option>Malware Outbreak</option>
+<option>Unauthorized Access</option>
+<option>Data Leakage</option>
+<option>DDoS Attack</option>
+<option>Other</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-label text-xs font-bold uppercase text-on-surface-variant">Incident Description</label>
+<textarea class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary/20" placeholder="Provide as much detail as possible (systems affected, timestamps, observed behavior)" rows="4"></textarea>
+</div>
+<button class="w-full py-4 bg-gradient-to-r from-primary to-primary-container text-on-primary font-headline font-bold rounded-full shadow-lg hover:shadow-primary/20 transition-all active:scale-[0.98]" type="submit">
+                                    Submit Confidential Report
+                                </button>
+<p class="text-center text-[10px] font-label text-on-surface-variant uppercase tracking-widest mt-4">
+                                    All reports are encrypted and handled with the highest level of TLP:RED confidentiality.
+                                </p>
+</form>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-900 w-full py-16 px-12 border-t border-slate-200/20">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8 w-full max-w-7xl mx-auto">
+<div class="space-y-4 text-center md:text-left">
+<div class="font-['Public_Sans'] font-bold text-blue-900 dark:text-white text-2xl tracking-tighter">
+                    Phapros CSIRT
+                </div>
+<p class="font-['Inter'] text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400">
+                    © 2024 PT Phapros Tbk CSIRT. Clinical Guardian Protocol.
+                </p>
+</div>
+<div class="flex flex-wrap justify-center gap-8 font-['Inter'] text-xs uppercase tracking-widest">
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors hover:underline decoration-2" href="#">BSSN</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors hover:underline decoration-2" href="#">Phapros Official</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors hover:underline decoration-2" href="#">Privacy Policy</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors hover:underline decoration-2" href="#">Incident Procedure</a>
+</div>
+</div>
+</footer>
+</body></html>
